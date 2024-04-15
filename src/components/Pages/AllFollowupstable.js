@@ -210,11 +210,11 @@ export default function AllFollowupstable({ sendDataToParent, dataFromParent }) 
       selector: (row) => row?.service_details[0]?.product_service_name,
       sortable: true,
     },
-    // {
-    //   name: "Lead Source",
-    //   selector: (row) => row?.lead_source_details[0]?.lead_source_name,
-    //   sortable: true,
-    //  },
+    {
+      name: "Lead Status",
+      selector: (row) => row?.status_details[0]?.status_name,
+      sortable: true,
+     },
 
   ];
 
