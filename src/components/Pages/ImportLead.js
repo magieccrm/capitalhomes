@@ -7,14 +7,14 @@ import { getStatebycountry } from "../../features/getStateByCountrySlice";
 import { toast } from "react-toastify";
 import { getAllStatus } from "../../features/statusSlice";
 import { addlead } from "../../features/leadSlice";
-import { getAllAgent,getAllAgentWithData } from "../../features/agentSlice";
+import { getAllAgent } from "../../features/agentSlice";
 import axios from "axios";
 import { Button } from "bootstrap";
 
 
 export default function ImportLead() {
   const apiUrl = process.env.REACT_APP_API_URL;    
-    const [leaddata, setleaddata] = useState({});
+  const [leaddata, setleaddata] = useState({});
   const { ProductService } = useSelector((state) => state.ProductService);
   const { leadSourcedata } = useSelector((state) => state.leadSource);
   const { Statusdata } = useSelector((state) => state.StatusData);
@@ -29,13 +29,7 @@ export default function ImportLead() {
     dispatch(getAllLeadSource());
     dispatch(getAllStatus());
     dispatch(getAllCountry());
-    // dispatch(getAllAgent());
-    if(localStorage.getItem("role")==='admin'){ 
-      dispatch(getAllAgent());
-    }
-    if(localStorage.getItem("role")==='TeamLeader'){
-      dispatch(getAllAgentWithData({assign_to_agent:localStorage.getItem("user_id")}));
-    }
+    dispatch(getAllAgent());
   }, []);
 
 
@@ -97,24 +91,24 @@ export default function ImportLead() {
    if(!file){
     return alert('File Is Required');
    }
-   if(!leadSource){
-    return alert('lead Source Required');
-   }
-   if(!service){
-    return alert('Service Is Required');
-   }
-   if(!status){
-    return alert('Status Is Required');
-   }
-   if(!country){
-    return alert('Country Is Required');
-   }
+  //  if(!leadSource){
+  //   return alert('lead Source Required');
+  //  }
+  //  if(!service){
+  //   return alert('Service Is Required');
+  //  }
+  //  if(!status){
+  //   return alert('Status Is Required');
+  //  }
+  //  if(!country){
+  //   return alert('Country Is Required');
+  //  }
    if(!assignToAgent){
     return alert('AssignToAgent Is Required');
    }
-   if(!state){
-    return alert('State Is Required');
-   }
+  //  if(!state){
+  //   return alert('State Is Required');
+  //  }
     const formData = new FormData();
     formData.append('file', file);
     formData.append('lead_source', leadSource);
@@ -201,12 +195,12 @@ export default function ImportLead() {
 
                           </div>
                           <div className="row">
-                            <div className="col-md-6">
+                            <div className="col-md-6 d-none">
                               <div className="form-group">
                                 <select
                                   className="form-control"
                                   name="lead_source"
-                                  required 
+                                   
                                   onClick={handleFileChange1}
                                   >
                                   <option value="">Select Lead Source</option>
@@ -222,12 +216,12 @@ export default function ImportLead() {
                                 </select>
                               </div>
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-6 d-none">
                               <div className="form-group">
                                 <select
                                   className="form-control"
                                   name="service"
-                                  required
+                                  
                                   onClick={handleFileChange2}
                                 >
                                   <option value="">Select Service</option>
@@ -243,11 +237,11 @@ export default function ImportLead() {
                                 </select>
                               </div>
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-6 d-none">
                               <div className="form-group">
                                 <select className="form-control" 
                                  onClick={handleFileChange3}
-                                name="status" required >
+                                name="status"  >
                                   <option value="">Select Status</option>
                                   {Statusdata?.leadstatus?.map(
                                     (status, key) => {
@@ -261,9 +255,9 @@ export default function ImportLead() {
                                 </select>
                               </div>
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-6 d-none">
                               <div className="form-group">
-                                <select   onChange={handleInputChange} className="form-control" name="country" required >
+                                <select   onChange={handleInputChange} className="form-control" name="country"  >
                                   <option value="">Select Country</option>
                                   {CountryState?.country?.map((country1, key) => {
                               return (
@@ -276,7 +270,7 @@ export default function ImportLead() {
                               </div>
                             </div>
 
-                            <div className="col-md-6">
+                            <div className="col-md-6 ">
                               <div className="form-group">
                                 <select
                                   className="form-control"
@@ -296,11 +290,11 @@ export default function ImportLead() {
                                 </select>
                               </div>
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-6 d-none">
                               <div className="form-group">
                                 <select className="form-control" 
                                   onClick={handleFileChange6}
-                                name="state" required >
+                                name="state"  >
                                   <option value="">Select State</option>
                                   {StateByCountry?.state?.map((state1, key) => {
                               return (
