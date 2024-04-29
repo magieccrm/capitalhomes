@@ -629,7 +629,10 @@ export default function AllFollowupstable({ sendDataToParent, dataFromParent }) 
           <button className="btn shadow_btn btn-sm btn-danger" onClick={DeleteSelected}>
             Delete
           </button></>
-              ) : (<></>)
+              ) : (<><button className="btn btn-sm shadow_btn btn-success" onClick={exportToPDF}>Export PDF</button>
+              <button className="btn btn-sm shadow_btn btn-success" onClick={exportToExcel}>
+                Export Excel
+              </button></>)
           }
           <DataTable
             responsive
