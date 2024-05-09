@@ -362,7 +362,7 @@ function Home() {
               {
                 Array?.isArray(leadcountdata) ? (
                   leadcountdata?.map((leadcountdata1, index) => (
-                    leadcountdata1?.name === 'Followup Lead' ? (
+                    leadcountdata1?.name === 'Pending' ? (
                       <div className="col-xs-6 col-sm-6 col-md-6 pl-0 dashboard-fixeds col-lg-4" key={index}>
                         <Link to="/followupleads">  <div className={`buttons-30 border-lefts${index + 1} mb-4`} role="button">
                           <div className="text-center pt-3">
