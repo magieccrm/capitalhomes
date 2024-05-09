@@ -412,7 +412,7 @@ function Home() {
                             </div>
                             <h5 className="mt-2 mb-2"><span className="counter-value">
                               {leadcountdata1?.name}</span></h5>
-                            <p className="text-slate-500 dark:text-zink-200">{leadcountdata1?.Value} - {leadcountdata1?.Value1}</p>
+                            <p className="text-slate-500 dark:text-zink-200">{leadcountdata1?.Value}  </p>
                           </div>
                         </div></Link>
                       </div>
