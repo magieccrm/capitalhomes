@@ -2,13 +2,13 @@ import React, { Fragment, useState, useEffect } from "react";
 import { addlead, getAllLead } from "../../features/leadSlice";
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from "../Loader";
-import { Allleadstable } from "./Allleadstable";
+import { Importedleadstable } from "./Importedleadstable";
 import { Link } from "react-router-dom";
 import { getAllAgent } from "../../features/agentSlice";
 import { getAllStatus } from "../../features/statusSlice";
 import axios from "axios";
 import { toast } from "react-toastify";
-function Leads() {
+function Importedlead() {
   const apiUrl = process.env.REACT_APP_API_URL;
   const dispatch = useDispatch();
   const { lead, loading } = useSelector((state) => state.lead);
@@ -157,7 +157,7 @@ function Leads() {
 
               <div className="pt-3 row pl-0">
                 <div className="col-12 pl-0">
-                  <Allleadstable sendDataToParent={handleChildData} dataFromParent={none} />
+                  <Importedleadstable sendDataToParent={handleChildData} dataFromParent={none} />
                 </div>
 
               </div>
@@ -174,4 +174,4 @@ function Leads() {
   );
 }
 
-export default Leads;
+export default Importedlead;

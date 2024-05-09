@@ -172,7 +172,9 @@ function Setting() {
     }
     }
   const editagent = async (_id,role) => {
+    setblock("contents");
     const selectedData = await agent?.agent.find((item) => item._id === _id);
+   
     setFormData(selectedData);
     if(role=='admin' || role=='TeamLeader'){
       setassigntlnone('none')
@@ -253,8 +255,9 @@ function Setting() {
 
   const setpayingcap = async () => {
     const agent_count = await agent?.agent?.length;
+   
     // console.log(hostings["0"]?.Package);
-    if (agent_count == hostings["0"]?.Package) {
+    if (agent_count === hostings["0"]?.Package) {
       setblock("none");
     } else {
       setblock("contents");
@@ -270,7 +273,7 @@ function Setting() {
 
   useEffect(() => {
     setpayingcap();
-  }, [setpayingcap]);
+  }, [agent?.agent?.length,hostings["0"]?.Package]);
 
   const handlesourceDelete = async (countryId) => {
     const confirmDelete1 = window.confirm(
@@ -2508,9 +2511,7 @@ function Setting() {
                                               <th className="sorting">
                                                Assign TeamLeader
                                               </th>
-                                              {/* <th className="sorting">
-                                                Status
-                                              </th> */}
+                                             
                                                <th className="sorting">
                                                 Action
                                               </th>
@@ -2967,6 +2968,29 @@ function Setting() {
                                                     case "65a904e04473619190494482": {
                                                       return "d-none";
                                                     }
+                                                    case "65a904fc4473619190494486": {
+                                                      return "d-none";
+                                                    }
+
+                                                    default:
+                                                      return ""; // Default class for other statuses
+                                                  }
+                                                };
+
+                                                const getStatusBadgeClassdeleteremove = (
+                                                  statusName
+                                                ) => {
+                                                  switch (statusName) {
+                                                    case "65a904e04473619190494482": {
+                                                      return "d-none";
+                                                    }
+                                                    case "65a904ed4473619190494484": {
+                                                      return "d-none";
+                                                    }
+                                                    case "65a904fc4473619190494486": {
+                                                      return "d-none";
+                                                    }
+                                                    
 
                                                     default:
                                                       return ""; // Default class for other statuses
@@ -3021,7 +3045,10 @@ function Setting() {
                                                         onClick={(e) =>
                                                           editstatus(state._id)
                                                         }
-                                                        className="btn btn-info btn-xs"
+                                                        // className="btn btn-info btn-xs"
+                                                        className={`btn btn-info btn-xs ${getStatusBadgeClassdeleteremove(
+                                                          state._id
+                                                        )}`}
                                                       >
                                                         <i
                                                           className="fa fa-pencil-square-o"

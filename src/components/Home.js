@@ -833,7 +833,7 @@ function Home() {
                         <div className="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                           <div className="me-2">
                             <div className="d-flex align-items-center">
-                              <h6 className="mb-0 me-1">E-Commerce</h6>
+                              <h6 className="mb-0 me-1">Bhutani Infra</h6>
                             </div>
 
                           </div>
@@ -852,7 +852,7 @@ function Home() {
                         <div className="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                           <div className="me-2">
                             <div className="d-flex align-items-center">
-                              <h6 className="mb-0 me-1">Real-Estate</h6>
+                              <h6 className="mb-0 me-1">DLF</h6>
                             </div>
 
                           </div>
@@ -871,7 +871,7 @@ function Home() {
                         <div className="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                           <div className="me-2">
                             <div className="d-flex align-items-center">
-                              <h6 className="mb-0 me-1">WhatsApp</h6>
+                              <h6 className="mb-0 me-1">M3M</h6>
                             </div>
 
                           </div>
@@ -889,7 +889,7 @@ function Home() {
                         <div className="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                           <div className="me-2">
                             <div className="d-flex align-items-center">
-                              <h6 className="mb-0 me-1">Web Maintenance Qtly</h6>
+                              <h6 className="mb-0 me-1">Godrej Properties</h6>
                             </div>
 
                           </div>
@@ -907,7 +907,7 @@ function Home() {
                         <div className="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                           <div className="me-2">
                             <div className="d-flex align-items-center">
-                              <h6 className="mb-0 me-1">Website Maintenance</h6>
+                              <h6 className="mb-0 me-1">Tata Housing</h6>
                             </div>
 
                           </div>

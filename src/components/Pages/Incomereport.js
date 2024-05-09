@@ -97,6 +97,7 @@ export default function Incomereport() {
   const [getLeadData1, setLeadData1] = useState([]);
   const getEmployeeReport = async (e) => {
     e.preventDefault();
+    const data1={...data,role:localStorage.getItem("role"),user_id:localStorage.getItem("user_id")}
     const headers = {
       "Content-Type": "application/json",
       "mongodb-url": DBuUrl,
@@ -104,7 +105,7 @@ export default function Incomereport() {
     try {
       const responce = await axios.post(
         `${apiUrl}/EmployeesReportDetailByFilter`,
-        data,
+        data1,
         { headers }
       );
       setLeadData(responce?.data?.lead);
@@ -400,7 +401,7 @@ export default function Incomereport() {
                             fixedHeaderScrollHeight="550px"
                             selectableRowsHighlight
                             highlightOnHover
-                            subHeader
+                            subHeader   
                             customStyles={customStyles}
                           />
                         </div>

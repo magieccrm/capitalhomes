@@ -59,10 +59,7 @@ export default function EmployeeReport() {
  const hours = Math.floor(second / 3600);
     const minutes = Math.floor((second % 3600) / 60);
     const remainingSeconds = second % 60;
-   const timeconverted= hours+'h '+minutes+'m '+remainingSeconds+'s';
-    
- 
-      
+   const timeconverted= hours+'h '+minutes+'m '+remainingSeconds+'s'
   return (
     <div>
       <div className="content-wrapper">
