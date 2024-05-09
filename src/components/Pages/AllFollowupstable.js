@@ -61,8 +61,8 @@ export default function AllFollowupstable({ sendDataToParent, dataFromParent }) 
       const filteredLeads = responce?.data?.lead?.filter(lead => lead?.type !== 'excel');
 
       setstatus(responce?.data?.success)
-      setleads(filteredLeads);
-      setfilterleads(filteredLeads);
+      setleads(responce?.data?.lead);
+      setfilterleads(responce?.data?.lead);
     } catch (error) {
       console.log(error);
       setfilterleads();
@@ -85,8 +85,8 @@ export default function AllFollowupstable({ sendDataToParent, dataFromParent }) 
       const filteredLeads = responce?.data?.lead?.filter(lead => lead?.type !== 'excel');
       if (responce?.data?.success === true) {
         setstatus(responce?.data?.success)
-        setleads(filteredLeads);
-        setfilterleads(filteredLeads);
+        setleads(responce?.data?.lead);
+        setfilterleads(responce?.data?.lead);
       }
       if (responce?.data?.success === false) {
         setstatus(responce?.data?.success)
@@ -113,8 +113,8 @@ export default function AllFollowupstable({ sendDataToParent, dataFromParent }) 
       );
       const filteredLeads = responce?.data?.lead?.filter(lead => lead?.type !== 'excel');
       if (responce?.data?.success === true) {
-        setleads(filteredLeads);
-        setfilterleads(filteredLeads);
+        setleads(responce?.data?.lead);
+        setfilterleads(responce?.data?.lead);
         return (responce?.data?.message);
       }
     } catch (error) {
