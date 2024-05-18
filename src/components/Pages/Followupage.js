@@ -41,19 +41,7 @@ export default function Followupage() {
   useEffect(() => {
     setLocalDetails(AllDetails || {});
   }, [AllDetails]);
-  // const getalltransactional = async () => {
-  //   try {
-  //     const response = await axios.get('http://localhost:3000/api/v1/getallsmsrecord', {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         "mongodb-url": DBuUrl,
-  //       },
-  //     });
-  //     setsmsdata(response?.data?.transactional['0']);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
+  
   useEffect(() => {
     dispatch(getAllStatus());
     dispatch(getAllLead());
@@ -137,13 +125,12 @@ export default function Followupage() {
   const setStatus = (e) => {
     if (e.target.value == "65a904e04473619190494482") {
       setdata(e.target.value);
-
       setshow("block");
       setshowforlostlead("none");
     } else if (e.target.value == "65a904ed4473619190494484") {
       setdata(e.target.value);
       setshow("none");
-      setshowforlostlead("block");
+      setshowforlostlead("none");
     } else {
       setshow("none");
       setshowforlostlead("none");
@@ -163,7 +150,7 @@ export default function Followupage() {
     if (updatedLeadData.lead_id) {
       const aaaa = await dispatch(addfollowup(updatedLeadData));
       if (aaaa.payload.success === true) {
-        navigate("/Followupleads");
+       // navigate("/Followupleads");
         toast.success(aaaa.payload?.message);
       } else {
         toast.warn(aaaa.payload?.message);
