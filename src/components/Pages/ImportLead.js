@@ -118,8 +118,8 @@ export default function ImportLead() {
     formData.append('assign_to_agent', assignToAgent);
     formData.append('state', state);
    try {
-      // const response = await fetch(`${apiUrl}/import`, {
-        const response = await fetch(`http://localhost:5000/api/v1/import`, {
+      const response = await fetch(`${apiUrl}/import`, {
+        // const response = await fetch(`http://localhost:5000/api/v1/import`, {
         method: 'POST',
         body: formData,
       });
