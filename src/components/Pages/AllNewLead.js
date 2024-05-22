@@ -49,10 +49,6 @@ export const AllNewLead = ({ sendDataToParent, dataFromParent }) => {
       setfilterleads(responce?.data?.lead);
       return (responce?.data?.message);
     } catch (error) {
-      const message = await error?.response?.data?.message;
-      if (message == 'Client must be connected before running operations') {
-        getAllLead1();
-      }
       console.log(error);
       setfilterleads();
     }
@@ -178,7 +174,7 @@ export const AllNewLead = ({ sendDataToParent, dataFromParent }) => {
     {
       name: "Name",
       cell: (row) => (
-        <a href={`/followupleads/${row?._id}`}>{row?.full_name}</a>
+        <a href={`/Newleadfollowup/${row?._id}`}>{row?.full_name}</a>
       ),
       selector: (row) => row?.full_name,
       sortable: true,

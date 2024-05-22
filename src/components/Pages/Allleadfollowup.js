@@ -16,7 +16,7 @@ import { toast } from "react-toastify";
 import { getAllLostReason } from "../../features/lostreasonSlice";
 import axios from "axios";
 
-export default function Followupage() {
+export default function Allleadfollowup() {
   const apiUrl = process.env.REACT_APP_API_URL;
   const DBuUrl = process.env.REACT_APP_DB_URL;
 
@@ -154,7 +154,7 @@ export default function Followupage() {
     if (updatedLeadData.lead_id) {
       const aaaa = await dispatch(addfollowup(updatedLeadData));
       if (aaaa.payload.success === true) {
-       navigate("/Followupleads");
+       navigate("/leads");
         toast.success(aaaa.payload?.message);
       } else {
         toast.warn(aaaa.payload?.message);

@@ -217,7 +217,7 @@ export const Allleadstable = ({ sendDataToParent, dataFromParent }) => {
     {
       name: "Name",
       cell: (row) => (
-        <a href={`/followupleads/${row?._id}`}>{row?.full_name}</a>
+        <a href={`/Allleadfollowup/${row?._id}`}>{row?.full_name}</a>
       ),
       selector: (row) => row?.full_name,
       sortable: true,

@@ -56,11 +56,14 @@ import ImpSchedule from './components/Pages/ImpSchedule';
 import BusinessWA from './components/Pages/BusinessWA';
 import Importedlead from './components/Pages/Importedlead';
 import Newloginpage from './components/Pages/Newloginpage';
+import Newleadfollowup from './components/Pages/Newleadfollowup';
+import Allleadfollowup from './components/Pages/Allleadfollowup';
+import Importleadfollowup from './components/Pages/Importleadfollowup';
   function App() { 
     const [isLoading, setIsLoading] = useState(true);
     const [isLogined, setIsLogined]= useState(false); 
     const [user_id, setuser_id]= useState(); 
-
+    // const previousLocation = usePreviousLocation();
 
     useEffect(() => {
       const checkToken = async () => {
@@ -208,7 +211,15 @@ const handleContextMenu = (e) => {
          <Route path="/Createinvoice" element={<Createinvoice />}></Route>
          <Route path="/Addclient" element={<Addclient />}></Route>
          <Route path="/MultipleForm" element={<MultipleForm />}></Route>
-         <Route path="/followupleads/:id"  element={<Followupage/>} ></Route>
+
+
+         <Route path="/followupleads/:id" element={<Followupage  />} ></Route>
+         <Route path="/Newleadfollowup/:id" element={<Newleadfollowup  />} ></Route>
+         <Route path="/Allleadfollowup/:id" element={<Allleadfollowup  />} ></Route>
+         <Route path="/Importleadfollowup/:id" element={<Importleadfollowup  />} ></Route>
+         
+
+
          <Route path="/ImpSchedule/:id"  element={<ImpSchedule/>} ></Route></>
         )
          :<>
